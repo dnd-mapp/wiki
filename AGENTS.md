@@ -28,7 +28,7 @@ Don't add an H1 heading that duplicates the frontmatter `title`. Wiki.js renders
 ## Linking conventions
 
 - Links between pages within this wiki use relative paths, without the `pages/` prefix or `.md` extension (e.g. `/development-conventions/github`).
-- A page whose filename matches its parent folder (e.g. `development-conventions/development-conventions.md`) is that folder's index: it resolves at the folder's own route (`/development-conventions`), not nested under itself. Other pages in the folder keep their own path segment (e.g. `/development-conventions/github`).
+- Wiki.js folders are virtual and inferred from page paths. There's no automatic "folder index" by matching filename to folder name: a file at `development-conventions/development-conventions.md` resolves at `/development-conventions/development-conventions`, not `/development-conventions`. To give a virtual folder a landing page, create a sibling file outside the folder, named after the folder itself. For example, `development-conventions.md` next to the `development-conventions/` folder gives the `/development-conventions` route. See the [Folder Structure guide](https://docs.requarks.io/guide/structure).
 - The live wiki (wiki.dndmapp.nl.eu.org) sits behind Cloudflare with AI bot traffic blocked, so an agent can't fetch it. Links meant to be followed by agents, such as references from another repo's `AGENTS.md`, should point at the GitHub source file instead (e.g. `https://github.com/dnd-mapp/wiki/blob/main/pages/development-conventions/github.md`).
 
 ## The `live` branch
