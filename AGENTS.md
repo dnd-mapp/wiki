@@ -23,6 +23,13 @@ dateCreated: 2026-07-30T11:51:09.000Z
 
 `tags` must be a comma-separated string, not a YAML list. Wiki.js' git storage parser calls `.split(', ')` on it directly; a list value causes an import failure (`_.get(...).split is not a function`).
 
+Don't add an H1 heading that duplicates the frontmatter `title`. Wiki.js renders the title above the page content automatically, so a matching H1 is redundant.
+
+## Linking conventions
+
+- Links between pages within this wiki use relative paths, without the `pages/` prefix or `.md` extension (e.g. `/github-conventions`).
+- The live wiki (wiki.dndmapp.nl.eu.org) sits behind Cloudflare with AI bot traffic blocked, so an agent can't fetch it. Links meant to be followed by agents, such as references from another repo's `AGENTS.md`, should point at the GitHub source file instead (e.g. `https://github.com/dnd-mapp/wiki/blob/main/pages/github-conventions.md`).
+
 ## The `live` branch
 
 Wiki.js builds pages from the `live` branch, not `main`. `live` is generated automatically by the `publish-live` GitHub Actions workflow, which runs `git subtree split --prefix=pages` on `main` and force-pushes the result. Never edit `live` directly; changes will be overwritten on the next publish run.
