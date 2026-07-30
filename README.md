@@ -1,6 +1,6 @@
 # dnd-mapp/wiki
 
-Git storage backend for the D&D Mapp Wiki.js instance.
+Git storage backend for the D&D Mapp Wiki.js instance, live at [wiki.dndmapp.nl.eu.org](https://wiki.dndmapp.nl.eu.org).
 
 ## Structure
 
