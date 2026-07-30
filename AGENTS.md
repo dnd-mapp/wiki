@@ -15,13 +15,13 @@ title: Page Title
 description: Short description
 published: true
 date: 2026-07-30T11:51:09.000Z
-tags:
-  - tag-one
-  - tag-two
+tags: tag-one, tag-two
 editor: markdown
 dateCreated: 2026-07-30T11:51:09.000Z
 ---
 ```
+
+`tags` must be a comma-separated string, not a YAML list. Wiki.js's git storage parser calls `.split(', ')` on it directly; a list value causes an import failure (`_.get(...).split is not a function`).
 
 ## The `live` branch
 
