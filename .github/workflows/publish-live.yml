@@ -1,0 +1,40 @@
+name: Publish live pages
+
+on:
+    push:
+        branches:
+            - main
+        paths:
+            - 'pages/**'
+    workflow_dispatch:
+
+concurrency:
+    group: publish-live-pages
+    cancel-in-progress: false
+
+permissions: {}
+
+jobs:
+    publish:
+        runs-on: ubuntu-22.04
+        steps:
+            -   name: Create GitHub App token
+                id: app-token
+                uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+                with:
+                    client-id: ${{ secrets.GH_APP_CLIENT_ID }}
+                    private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+
+            -   name: Checkout repo
+                uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+                with:
+                    fetch-depth: 0
+                    token: ${{ steps.app-token.outputs.token }}
+
+            -   name: Split pages/ history onto live branch
+                shell: bash
+                run: git subtree split --prefix=pages -b live
+
+            -   name: Push live branch
+                shell: bash
+                run: git push origin live --force
