@@ -27,8 +27,8 @@ Don't add an H1 heading that duplicates the frontmatter `title`. Wiki.js renders
 
 ## Linking conventions
 
-- Links between pages within this wiki use relative paths, without the `pages/` prefix or `.md` extension (e.g. `/github-conventions`).
-- The live wiki (wiki.dndmapp.nl.eu.org) sits behind Cloudflare with AI bot traffic blocked, so an agent can't fetch it. Links meant to be followed by agents, such as references from another repo's `AGENTS.md`, should point at the GitHub source file instead (e.g. `https://github.com/dnd-mapp/wiki/blob/main/pages/github-conventions.md`).
+- Links between pages within this wiki use relative paths, without the `pages/` prefix or `.md` extension (e.g. `/development-conventions/github`).
+- The live wiki (wiki.dndmapp.nl.eu.org) sits behind Cloudflare with AI bot traffic blocked, so an agent can't fetch it. Links meant to be followed by agents, such as references from another repo's `AGENTS.md`, should point at the GitHub source file instead (e.g. `https://github.com/dnd-mapp/wiki/blob/main/pages/development-conventions/github.md`).
 
 ## The `live` branch
 
@@ -36,12 +36,16 @@ Wiki.js builds pages from the `live` branch, not `main`. `live` is generated aut
 
 ## CI conventions
 
-GitHub Actions pinning follows the org-wide convention documented in [GitHub Repository Conventions](https://github.com/dnd-mapp/wiki/blob/main/pages/github-conventions.md).
+GitHub Actions pinning follows the org-wide convention documented in [GitHub Repository Conventions](https://github.com/dnd-mapp/wiki/blob/main/pages/development-conventions/github.md).
 
 - The publish workflow authenticates as the `dnd-mapp` GitHub App (via `secrets.GH_APP_CLIENT_ID` and `secrets.GH_APP_PRIVATE_KEY`, both org-level secrets) instead of the default `GITHUB_TOKEN`.
 
 ## Commit conventions
 
-Commit message format and commit grouping follow the org-wide convention documented in [GitHub Repository Conventions](https://github.com/dnd-mapp/wiki/blob/main/pages/github-conventions.md).
+Commit message format and commit grouping follow the org-wide convention documented in [GitHub Repository Conventions](https://github.com/dnd-mapp/wiki/blob/main/pages/development-conventions/github.md).
 
 - Draft commit messages and get confirmation before committing.
+
+## Pull request conventions
+
+Pull request title, description, sizing, and review conventions follow the org-wide guide documented in [Creating a Pull Request](https://github.com/dnd-mapp/wiki/blob/main/pages/development-conventions/creating-a-pull-request.md).

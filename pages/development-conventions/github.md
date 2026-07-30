@@ -24,3 +24,7 @@ These conventions apply to every repository in the `dnd-mapp` GitHub organizatio
   ```
 
   Floating tags can be moved to point at a different commit after review. Pinning to an SHA guarantees the workflow always runs the exact code that was audited.
+
+## See also
+
+- [Development Conventions](/development-conventions): index of all development conventions.
