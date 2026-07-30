@@ -1,2 +1,3 @@
-# wiki
-Git storage backend for the D&amp;D Mapp Wiki.js instance.
+# dnd-mapp/wiki
+
+Git storage backend for the D&D Mapp Wiki.js instance.
