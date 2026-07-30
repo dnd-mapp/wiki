@@ -29,11 +29,12 @@ Wiki.js builds pages from the `live` branch, not `main`. `live` is generated aut
 
 ## CI conventions
 
-- GitHub Actions in this repo are pinned to a full commit SHA, with the version as a trailing comment (e.g. `uses: actions/checkout@<sha> # v7.0.1`), not a floating tag.
+GitHub Actions pinning follows the org-wide convention documented in [GitHub Repository Conventions](https://github.com/dnd-mapp/wiki/blob/main/pages/github-conventions.md).
+
 - The publish workflow authenticates as the `dnd-mapp` GitHub App (via `secrets.GH_APP_CLIENT_ID` and `secrets.GH_APP_PRIVATE_KEY`, both org-level secrets) instead of the default `GITHUB_TOKEN`.
 
 ## Commit conventions
 
-- Commit messages follow Conventional Commits.
-- Group changes into separate commits by intent rather than one large commit.
+Commit message format and commit grouping follow the org-wide convention documented in [GitHub Repository Conventions](https://github.com/dnd-mapp/wiki/blob/main/pages/github-conventions.md).
+
 - Draft commit messages and get confirmation before committing.
