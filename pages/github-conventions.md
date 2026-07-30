@@ -8,8 +8,6 @@ editor: markdown
 dateCreated: 2026-07-30T12:00:00.000Z
 ---
 
-# GitHub Repository Conventions
-
 These conventions apply to every repository in the `dnd-mapp` GitHub organization.
 
 ## Commit conventions
