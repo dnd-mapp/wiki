@@ -23,4 +23,4 @@ These conventions apply to every repository in the `dnd-mapp` GitHub organizatio
   uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
   ```
 
-  Floating tags can be moved to point at a different commit after review. Pinning to a SHA guarantees the workflow always runs the exact code that was audited.
+  Floating tags can be moved to point at a different commit after review. Pinning to an SHA guarantees the workflow always runs the exact code that was audited.
