@@ -12,4 +12,4 @@ Welcome to the D&D Mapp Wiki. This page is a stub, content coming soon.
 
 ## See also
 
-- [GitHub Repository Conventions](/github-conventions): commit message and CI conventions shared across all dnd-mapp repositories.
+- [Development Conventions](/development-conventions): index of development conventions shared across all dnd-mapp repositories.
