@@ -12,3 +12,4 @@ Conventions shared across every repository in the `dnd-mapp` GitHub organization
 
 - [GitHub Repository Conventions](/development-conventions/github): commit message and CI conventions.
 - [Creating a Pull Request](/development-conventions/creating-a-pull-request): guide for writing and submitting pull requests, for humans and agents.
+- [README Conventions](/development-conventions/readme): best practices for writing a README.md.
