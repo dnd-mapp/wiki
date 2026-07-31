@@ -35,6 +35,8 @@ Don't add an H1 heading that duplicates the frontmatter `title`. Wiki.js renders
 
 Wiki.js builds pages from the `live` branch, not `main`. `live` is generated automatically by the `publish-live` GitHub Actions workflow, which runs `git subtree split --prefix=pages` on `main` and force-pushes the result. Never edit `live` directly; changes will be overwritten on the next publish run.
 
+A repository ruleset ("Live branch") restricts creation, deletion, updates, and force pushes on `live` to the `dnd-mapp` GitHub App, the same app `publish-live` authenticates as. Manual pushes or deletes from anyone else are rejected.
+
 ## CI conventions
 
 GitHub Actions pinning follows the org-wide convention documented in [GitHub Repository Conventions](https://github.com/dnd-mapp/wiki/blob/main/pages/development-conventions/github.md).
