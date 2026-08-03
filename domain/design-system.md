@@ -1,6 +1,6 @@
 ---
 title: Design System
-description: Glossary for the dnd-mapp design system: design tokens, Brand × Mode infrastructure, and Base/Reset styles
+description: Glossary for the dnd-mapp design system - design tokens, Brand × Mode infrastructure, and Base/Reset styles
 published: true
 date: 2026-08-03T16:00:00.000Z
 tags: domain, glossary, design-system, css, scss
