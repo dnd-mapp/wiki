@@ -14,3 +14,4 @@ Conventions shared across every repository in the `dnd-mapp` GitHub organization
 - [Creating a Pull Request](/development-conventions/creating-a-pull-request): guide for writing and submitting pull requests, for humans and agents.
 - [README Conventions](/development-conventions/readme): best practices for writing a README.md.
 - [Angular & TypeScript Conventions](/development-conventions/angular-typescript): coding conventions for TypeScript and Angular applications built from angular-app-template.
+- [CSS & SCSS Conventions](/development-conventions/css-scss): coding conventions for CSS and SCSS in applications built from angular-app-template.
