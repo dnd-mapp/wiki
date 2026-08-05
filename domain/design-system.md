@@ -37,7 +37,8 @@ A named design value (color, spacing, radius, type scale, etc.), layered in thre
 
 - **Primitive Token**: a raw scale value, agnostic to [Brand](#brand) and [Mode](#mode) (e.g. a color ramp step). Implemented as a Sass variable/map, compile-time only; never emitted as a CSS custom property, since nothing at runtime needs to read one directly.
 - **Semantic Token**: a role-based name (e.g. "surface color", "primary text color") whose value resolves differently per [Brand](#brand) × [Mode](#mode), uniformly across every token category (color, spacing, typography, and future categories), even for categories where the light/dark values are expected to end up identical in practice, so the resolution mechanism never needs special-casing per category. Components consume these, not primitives.
-- **Component Token**: a token scoped to one component (e.g. a button's background), defaulting to a Semantic Token but independently overridable without touching the semantic layer.\
+- **Component Token**: a token scoped to one component (e.g. a button's background), defaulting to a Semantic Token but independently overridable without touching the semantic layer.
+
 _Avoid_: Variable (too generic; use Design Token, or the specific tier, when discussing this project's tokens)
 
 Current category scope: color, spacing, and typography. Radii, elevation/shadow, and motion (duration/easing) are deliberately deferred until a real need for them shows up.
