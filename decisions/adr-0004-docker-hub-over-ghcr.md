@@ -2,7 +2,7 @@
 title: Publish Docker images to Docker Hub instead of GHCR
 description: Why this repo's CI publishes to Docker Hub, and the conventions that come with it
 published: true
-date: 2026-08-05T12:00:00.000Z
+date: 2026-08-05T15:45:00.000Z
 tags: adr, ci, conventions, domain-docker, domain-docker-publishing
 editor: markdown
 dateCreated: 2026-08-05T12:00:00.000Z
@@ -25,7 +25,7 @@ Auth is split across three Docker Hub access tokens, scoped to the least privile
 
 ## Status
 
-Accepted. The token-scope table above reflects the state at the time of this decision and has since changed (the description sync in particular was dropped, see [ADR 0005](/decisions/adr-0005-manual-dockerhub-description-sync)). See [Docker Publishing](/domain/docker/publishing) for the current scope table.
+Accepted. The token-scope table above reflects the state at the time of this decision and has since changed (the description sync in particular was dropped, see [ADR 0005](/decisions/adr-0005-manual-dockerhub-description-sync)). See [Docker Publishing](/domain/docker/publishing#docker-hub-access-token-scope) for the current scope table.
 
 ## See also
 
