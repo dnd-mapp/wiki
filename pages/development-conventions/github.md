@@ -25,6 +25,8 @@ These conventions apply to every repository in the `dnd-mapp` GitHub organizatio
 
   Floating tags can be moved to point at a different commit after review. Pinning to an SHA guarantees the workflow always runs the exact code that was audited.
 
+- Docker images are published to Docker Hub under the org's `dndmapp` account, sourced from the `DH_USERNAME` secret rather than derived from the GitHub org name. See [Publish Docker images to Docker Hub instead of GHCR](/development-conventions/adr-0001-docker-hub-over-ghcr) for why, and the token-scoping conventions that go with it.
+
 ## See also
 
 - [Development Conventions](/development-conventions): index of all development conventions.
