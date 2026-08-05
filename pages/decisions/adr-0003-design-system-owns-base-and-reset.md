@@ -3,7 +3,7 @@ title: Design system owns Base Styles and Reset, not each consuming app
 description: Why Base Styles and Reset live in the design system rather than each consuming app
 published: true
 date: 2026-08-03T15:30:00.000Z
-tags: domain, adr, design-system
+tags: adr, domain-design-system
 editor: markdown
 dateCreated: 2026-08-03T15:30:00.000Z
 ---

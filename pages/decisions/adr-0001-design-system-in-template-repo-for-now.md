@@ -3,7 +3,7 @@ title: Design system lives in this template repo for now, not its own package
 description: Why the design system is built inside angular-app-template rather than a separate package, and when that will change
 published: true
 date: 2026-08-03T12:00:00.000Z
-tags: domain, adr, design-system
+tags: adr, domain-design-system
 editor: markdown
 dateCreated: 2026-08-03T12:00:00.000Z
 ---

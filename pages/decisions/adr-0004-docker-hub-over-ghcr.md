@@ -2,8 +2,8 @@
 title: Publish Docker images to Docker Hub instead of GHCR
 description: Why this repo's CI publishes to Docker Hub, and the conventions that come with it
 published: true
-date: 2026-08-05T12:00:00.000Z
-tags: conventions, adr, github, ci, docker
+date: 2026-08-05T15:45:00.000Z
+tags: adr, ci, conventions, domain-docker, domain-docker-publishing
 editor: markdown
 dateCreated: 2026-08-05T12:00:00.000Z
 ---
@@ -18,15 +18,16 @@ Two things fall out of that switch that aren't obvious from the workflow YAML al
 Auth is split across three Docker Hub access tokens, scoped to the least privilege each job needs, paired with `DH_USERNAME`:
 
 | Secret                 | Scope             | Used by                                                             |
-|------------------------|-------------------|---------------------------------------------------------------------|
+|------------------------|-------------------|-----------------------------------------------------------------------|
 | `DH_READONLY`          | Read              | Looking up whether a `pr-<N>` image exists                          |
 | `DH_READ_WRITE`        | Read/write        | Pushing `pr-<N>`, promoting to `next`, syncing the repo description |
 | `DH_READ_WRITE_DELETE` | Read/write/delete | Removing a `pr-<N>` tag once its pull request closes                |
 
 ## Status
 
-Accepted.
+Accepted. The token-scope table above reflects the state at the time of this decision and has since changed (the description sync in particular was dropped, see [ADR 0005](/decisions/adr-0005-manual-dockerhub-description-sync)). See [Docker Publishing](/domain/docker/publishing#docker-hub-access-token-scope) for the current scope table.
 
 ## See also
 
 - [GitHub Repository Conventions](/development-conventions/github): the CI conventions this ADR's summary bullet belongs to.
+- [Docker Publishing](/domain/docker/publishing): the glossary this ADR belongs to.
