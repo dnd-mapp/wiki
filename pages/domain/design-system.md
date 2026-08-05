@@ -2,13 +2,13 @@
 title: Design System
 description: Glossary for the dnd-mapp design system - design tokens, Brand × Mode infrastructure, and Base/Reset styles
 published: true
-date: 2026-08-03T16:00:00.000Z
+date: 2026-08-05T13:50:00.000Z
 tags: domain, glossary, design-system, css, scss
 editor: markdown
 dateCreated: 2026-08-03T16:00:00.000Z
 ---
 
-The shared vocabulary for the design system used across `dnd-mapp` apps: design tokens, a Brand × Mode resolution mechanism, and (eventually) a small internal component library built on `@angular/cdk` primitives. Currently implemented inside [angular-app-template](https://github.com/dnd-mapp/angular-app-template)'s `src/design-system/` folder; see [ADR 0001](/domain/design-system/adr-0001-design-system-in-template-repo-for-now) for the plan to extract it into its own shared package.
+The shared vocabulary for the design system used across `dnd-mapp` apps: design tokens, a Brand × Mode resolution mechanism, and (eventually) a small internal component library built on `@angular/cdk` primitives. Currently implemented inside [angular-app-template](https://github.com/dnd-mapp/angular-app-template)'s `src/design-system/` folder; see [ADR 0001](/decisions/adr-0001-design-system-in-template-repo-for-now) for the plan to extract it into its own shared package.
 
 ## Language
 
@@ -70,11 +70,12 @@ Custom properties are unprefixed (e.g. `--color-surface`, not `--dm-color-surfac
 
 ## ADRs
 
-- [Design system lives in this template repo for now, not its own package](/domain/design-system/adr-0001-design-system-in-template-repo-for-now)
-- [Design-system code is a plain `src/` folder, not an Angular library project](/domain/design-system/adr-0002-design-system-plain-folder-not-library)
-- [Design system owns Base Styles and Reset, not each consuming app](/domain/design-system/adr-0003-design-system-owns-base-and-reset)
+- [Design system lives in this template repo for now, not its own package](/decisions/adr-0001-design-system-in-template-repo-for-now)
+- [Design-system code is a plain `src/` folder, not an Angular library project](/decisions/adr-0002-design-system-plain-folder-not-library)
+- [Design system owns Base Styles and Reset, not each consuming app](/decisions/adr-0003-design-system-owns-base-and-reset)
 
 ## See also
 
 - [Domain](/domain): index of all domain glossaries.
+- [Decisions](/decisions): architecture decision records, filterable by the `domain-design-system` tag.
 - [CSS & SCSS Conventions](/development-conventions/css-scss): general CSS/SCSS coding conventions (separate from this design system's own vocabulary).
