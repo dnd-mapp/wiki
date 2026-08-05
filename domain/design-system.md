@@ -2,7 +2,7 @@
 title: Design System
 description: Glossary for the dnd-mapp design system - design tokens, Brand × Mode infrastructure, and Base/Reset styles
 published: true
-date: 2026-08-05T13:50:00.000Z
+date: 2026-08-05T14:20:00.000Z
 tags: domain, glossary, design-system, css, scss
 editor: markdown
 dateCreated: 2026-08-03T16:00:00.000Z
@@ -15,22 +15,22 @@ The shared vocabulary for the design system used across `dnd-mapp` apps: design 
 **Design System**:
 The shared vocabulary of design tokens plus a small internal component library, built on `@angular/cdk` primitives, that gives `dnd-mapp` apps a consistent look. Being built inside `angular-app-template` for now so it can be iterated on quickly; the plan is to extract it into its own shared package (published to the same registry the Dockerfile already authenticates against) before any real app is bootstrapped from that template, so multiple apps can consume and stay in sync with it.
 
-**Phased scope**: this first pass covers [[Design Token]]s, the [[Brand]] × [[Mode]] infrastructure, and [[Base Styles]]/[[Reset]] (applying tokens to real elements and neutralizing browser UA defaults). The component library half of this definition is the long-term target, not part of the current effort: no shared components are being built yet, so the `dma` selector prefix and the plain-folder (not library-project) structure are forward-looking decisions with nothing built against them today.\
+**Phased scope**: this first pass covers **Design Token**s, the **Brand** × **Mode** infrastructure, and **Base Styles**/**Reset** (applying tokens to real elements and neutralizing browser UA defaults). The component library half of this definition is the long-term target, not part of the current effort: no shared components are being built yet, so the `dma` selector prefix and the plain-folder (not library-project) structure are forward-looking decisions with nothing built against them today.\
 _Avoid_: UI library, style guide, component kit
 
 **Brand**:\
 A named, per-app visual identity (accent colors, typography, etc.) within the design system. Exactly one brand is baked into a given app's build: an app never switches its own brand at runtime. Selected by the app's own global stylesheet doing a single `@use "@dnd-mapp/design-system/brands/<name>"` (no build configuration or file-replacement machinery; an app is permanently one brand). A separate preview/catalog build (not covered yet) is how multiple brands would ever be viewed side by side.\
-_Avoid_: Theme, skin (when used to mean brand specifically; "theme" is reserved for [[Mode]] in this project)
+_Avoid_: Theme, skin (when used to mean brand specifically; "theme" is reserved for **Mode** in this project)
 
 **Mode**:\
-Light or dark rendering of a [[Brand]]. Unlike Brand, Mode is a runtime concern: a running app can switch between its Mode(s) live. Selected via a `data-mode="light"` / `data-mode="dark"` attribute on `<html>`; when the attribute is absent, mode follows the `prefers-color-scheme` media query by default.\
+Light or dark rendering of a **Brand**. Unlike Brand, Mode is a runtime concern: a running app can switch between its Mode(s) live. Selected via a `data-mode="light"` / `data-mode="dark"` attribute on `<html>`; when the attribute is absent, mode follows the `prefers-color-scheme` media query by default.\
 _Avoid_: Theme (ambiguous with Brand; use Mode specifically for light/dark)
 
 **Design Token**:\
 A named design value (color, spacing, radius, type scale, etc.), layered in three tiers:
 
-- **Primitive Token**: a raw scale value, agnostic to [[Brand]] and [[Mode]] (e.g. a color ramp step). Implemented as a Sass variable/map, compile-time only; never emitted as a CSS custom property, since nothing at runtime needs to read one directly.
-- **Semantic Token**: a role-based name (e.g. "surface color", "primary text color") whose value resolves differently per [[Brand]] × [[Mode]], uniformly across every token category (color, spacing, typography, and future categories), even for categories where the light/dark values are expected to end up identical in practice, so the resolution mechanism never needs special-casing per category. Components consume these, not primitives.
+- **Primitive Token**: a raw scale value, agnostic to **Brand** and **Mode** (e.g. a color ramp step). Implemented as a Sass variable/map, compile-time only; never emitted as a CSS custom property, since nothing at runtime needs to read one directly.
+- **Semantic Token**: a role-based name (e.g. "surface color", "primary text color") whose value resolves differently per **Brand** × **Mode**, uniformly across every token category (color, spacing, typography, and future categories), even for categories where the light/dark values are expected to end up identical in practice, so the resolution mechanism never needs special-casing per category. Components consume these, not primitives.
 - **Component Token**: a token scoped to one component (e.g. a button's background), defaulting to a Semantic Token but independently overridable without touching the semantic layer.\
 _Avoid_: Variable (too generic; use Design Token, or the specific tier, when discussing this project's tokens)
 
@@ -59,20 +59,14 @@ _Avoid_: independent-axis naming (`--font-size-sm`, `--line-height-tight`, `--fo
 `--font-family-base` is a single global token, outside the per-role bundles, not part of the role grammar above, since only one typeface (Roboto) is loaded today. Forward-looking, not yet built: separate display/heading and monospace font-family tokens once those typefaces are actually added; at that point family may need to join the per-role bundle for heading/display roles specifically.
 
 **Base Styles**:\
-A CSS layer that applies resolved [[Design Token]] custom properties to real HTML elements, rather than just declaring them: `body` gets the `surface` context's color tokens plus `--font-family-base`, and each typography role maps onto its most natural element (`heading-1`→`h1`, `heading-2`→`h2`, `body`→`body` itself so it cascades to all text, `caption`→`small`, `label`→`label`). Brand/Mode-agnostic itself: it only references custom property names, which [[Brand]] × [[Mode]] resolution already fills in.\
-_Avoid_: Global styles, Theme (Theme is reserved for [[Mode]])
+A CSS layer that applies resolved **Design Token** custom properties to real HTML elements, rather than just declaring them: `body` gets the `surface` context's color tokens plus `--font-family-base`, and each typography role maps onto its most natural element (`heading-1`→`h1`, `heading-2`→`h2`, `body`→`body` itself so it cascades to all text, `caption`→`small`, `label`→`label`). Brand/Mode-agnostic itself: it only references custom property names, which **Brand** × **Mode** resolution already fills in.\
+_Avoid_: Global styles, Theme (Theme is reserved for **Mode**)
 
 **Reset**:\
-A CSS layer that neutralizes browser default UA styles (`box-sizing`, element margins) so nothing fights the values [[Base Styles]] sets. Doesn't reference any [[Design Token]]; identical regardless of which [[Brand]] or [[Mode]] is active.\
+A CSS layer that neutralizes browser default UA styles (`box-sizing`, element margins) so nothing fights the values **Base Styles** sets. Doesn't reference any **Design Token**; identical regardless of which **Brand** or **Mode** is active.\
 _Avoid_: Normalize (implies a broader cross-browser scope than this repo takes on)
 
-Custom properties are unprefixed (e.g. `--color-surface`, not `--dm-color-surface`). Design-system component selectors use the `dma` prefix (e.g. `dma-button`), distinct from an app's own `app` prefix (`angular.json`'s `schematics` prefix), so design-system components stay visually distinguishable from app-specific ones and need no rename when [[Design System]] is extracted to its own package.
-
-## ADRs
-
-- [Design system lives in this template repo for now, not its own package](/decisions/adr-0001-design-system-in-template-repo-for-now)
-- [Design-system code is a plain `src/` folder, not an Angular library project](/decisions/adr-0002-design-system-plain-folder-not-library)
-- [Design system owns Base Styles and Reset, not each consuming app](/decisions/adr-0003-design-system-owns-base-and-reset)
+Custom properties are unprefixed (e.g. `--color-surface`, not `--dm-color-surface`). Design-system component selectors use the `dma` prefix (e.g. `dma-button`), distinct from an app's own `app` prefix (`angular.json`'s `schematics` prefix), so design-system components stay visually distinguishable from app-specific ones and need no rename when **Design System** is extracted to its own package.
 
 ## See also
 

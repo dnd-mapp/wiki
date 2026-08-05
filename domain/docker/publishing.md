@@ -2,7 +2,7 @@
 title: Docker Publishing
 description: Glossary for how dnd-mapp repositories build, tag, and publish Docker images to Docker Hub in CI
 published: true
-date: 2026-08-05T13:15:00.000Z
+date: 2026-08-05T14:20:00.000Z
 tags: domain, glossary, docker, publishing, ci
 editor: markdown
 dateCreated: 2026-08-05T13:15:00.000Z
@@ -21,7 +21,7 @@ A Docker Hub image tag that always reflects the current tip of `main`. Produced 
 _Avoid_: latest (Docker Hub's own default tag name, not used here to keep "what does `main` currently look like" unambiguous), main
 
 **Image Promotion**:\
-The act of retagging a merged pull request's `pr-<N>` image as [[next tag]], followed by deleting the `pr-<N>` tag. Both steps happen in the same CI job so a promoted image is never left with two live tags.\
+The act of retagging a merged pull request's `pr-<N>` image as the `next` tag, followed by deleting the `pr-<N>` tag. Both steps happen in the same CI job so a promoted image is never left with two live tags.\
 _Avoid_: Release, publish (publish refers to the broader act of pushing any tag to Docker Hub, not specifically this merge-time step)
 
 **Docker Hub access token scope**:\
