@@ -15,3 +15,4 @@ Conventions shared across every repository in the `dnd-mapp` GitHub organization
 - [README Conventions](/development-conventions/readme): best practices for writing a README.md.
 - [Angular & TypeScript Conventions](/development-conventions/angular-typescript): coding conventions for TypeScript and Angular applications built from angular-app-template.
 - [CSS & SCSS Conventions](/development-conventions/css-scss): coding conventions for CSS and SCSS in applications built from angular-app-template.
+- [Changelog Conventions](/development-conventions/changelogs): Keep a Changelog format and consumer-facing scope for changelogs.
