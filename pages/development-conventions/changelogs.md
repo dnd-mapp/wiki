@@ -51,9 +51,9 @@ Reference-style links at the bottom of the file point `[Unreleased]` at the repo
 
 Once a version is released, point its link at that release's GitHub Releases page instead of a compare diff:
 
-    [1.0.0]: https://github.com/dnd-mapp/<repo>/releases/tag/1.0.0
+    [1.0.0]: https://github.com/dnd-mapp/<repo>/releases/tag/v1.0.0
 
-The exact tag-naming format (e.g. whether tags carry a `v` prefix) is decided when a repo's release process is defined.
+Git tags carry a `v` prefix (`v<major>.<minor>.<patch>`, matching `pnpm version`'s defaults), but the changelog version heading and Docker image tags stay unprefixed (`<major>.<minor>.<patch>`).
 
 ## Process
 
