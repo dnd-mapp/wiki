@@ -25,6 +25,16 @@ Use only its six standard change types, and omit any that have no entries for a 
 
 Don't invent repo-type-specific categories (e.g. a "Docker" category); file an entry under whichever of the six fits, so every repo's changelog reads the same way regardless of what it produces.
 
+Prefix an entry's text with the `**BREAKING:**` marker to flag it as a breaking change, regardless of which of the six categories it's filed under:
+
+```markdown
+### Removed
+
+- **BREAKING:** Removed the legacy `/v1` API namespace.
+```
+
+A repo's release process can use this marker to force a major version bump independent of the entry's heading.
+
 ## What counts as a consumer-facing change
 
 Only record changes that affect the consumer of the artifact the repo produces. What that means depends on the repo:
