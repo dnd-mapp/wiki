@@ -42,7 +42,7 @@ Triggers on the `v<version>` tag push:
 
 `Unreleased` is already emptied and committed to `main`, with no corresponding tag. Simply re-running `release-prepare.yml` does not self-heal this: its "check `Unreleased` has entries" guard fails immediately, since `Unreleased` is now empty on `main`.
 
-Recovery is manual, but doesn't require handling the SSH signing key by hand — that key is a write-only secret nobody can read back out. Run `release-retry-tag.yml` (`workflow_dispatch`, input: the released version, e.g. `1.4.0`). It searches `main`'s history for the matching `chore(release): <version>` commit (not just `HEAD`, since other commits may have landed on `main` since), confirms the tag doesn't already exist, and reuses `release-prepare.yml`'s SSH-configure -> `git tag -s` -> push steps against that commit.
+Recovery is manual, but doesn't require handling the SSH signing key by hand: that key is a write-only secret nobody can read back out. Run `release-retry-tag.yml` (`workflow_dispatch`, input: the released version, e.g. `1.4.0`). It searches `main`'s history for the matching `chore(release): <version>` commit (not just `HEAD`, since other commits may have landed on `main` since), confirms the tag doesn't already exist, and reuses `release-prepare.yml`'s SSH-configure -> `git tag -s` -> push steps against that commit.
 
 ### `release-publish.yml` fails partway
 
