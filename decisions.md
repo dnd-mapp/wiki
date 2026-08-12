@@ -17,6 +17,7 @@ Architecture decision records (ADRs) for repositories in the `dnd-mapp` GitHub o
 - [ADR 0003: Design system owns Base Styles and Reset, not each consuming app](/decisions/adr-0003-design-system-owns-base-and-reset) - `domain-design-system`
 - [ADR 0004: Publish Docker images to Docker Hub instead of GHCR](/decisions/adr-0004-docker-hub-over-ghcr) - `domain-docker`, `domain-docker-publishing`
 - [ADR 0005: Sync the Docker Hub description manually instead of via CI](/decisions/adr-0005-manual-dockerhub-description-sync) - `domain-docker`, `domain-docker-publishing`
+- [ADR 0006: Reuse the `next` tag for E2E-only pull requests instead of rebuilding](/decisions/adr-0006-reuse-next-tag-for-e2e-only-prs) - `domain-docker`, `domain-docker-publishing`
 
 ## Domains
 
