@@ -18,6 +18,7 @@ Architecture decision records (ADRs) for repositories in the `dnd-mapp` GitHub o
 - [ADR 0004: Publish Docker images to Docker Hub instead of GHCR](/decisions/adr-0004-docker-hub-over-ghcr) - `domain-docker`, `domain-docker-publishing`
 - [ADR 0005: Sync the Docker Hub description manually instead of via CI](/decisions/adr-0005-manual-dockerhub-description-sync) - `domain-docker`, `domain-docker-publishing`
 - [ADR 0006: Reuse the `next` tag for E2E-only pull requests instead of rebuilding](/decisions/adr-0006-reuse-next-tag-for-e2e-only-prs) - `domain-docker`, `domain-docker-publishing`
+- [ADR 0007: Publish template-lib-angular to npmjs.org, not GitHub Packages](/decisions/adr-0007-npmjs-over-github-packages) - `domain-design-system`
 
 ## Domains
 
