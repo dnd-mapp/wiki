@@ -11,6 +11,7 @@ dateCreated: 2026-07-30T19:00:00.000Z
 Conventions shared across every repository in the `dnd-mapp` GitHub organization.
 
 - [GitHub Repository Conventions](/development-conventions/github): commit message and CI conventions.
+- [Branch Naming Conventions](/development-conventions/branch-naming): format for naming git branches.
 - [Creating a Pull Request](/development-conventions/creating-a-pull-request): guide for writing and submitting pull requests, for humans and agents.
 - [README Conventions](/development-conventions/readme): best practices for writing a README.md.
 - [Angular & TypeScript Conventions](/development-conventions/angular-typescript): coding conventions for TypeScript and Angular applications built from angular-app-template.
